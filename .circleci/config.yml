@@ -34,9 +34,9 @@ jobs:
             name: Build and push Docker image to Heroku
             command: |
               sudo curl https://cli-assets.heroku.com/install.sh | sh
-              HEROKU_API_KEY=842fa429-0efe-456b-b2d0-4364e2d1eaef heroku container:login
-              HEROKU_API_KEY=842fa429-0efe-456b-b2d0-4364e2d1eaef heroku container:push web -a ds3backend
-              HEROKU_API_KEY=842fa429-0efe-456b-b2d0-4364e2d1eaef heroku container:release web -a ds3backend
+              HEROKU_API_KEY=${HEROKU_TOKEN} heroku container:login
+              HEROKU_API_KEY=${HEROKU_TOKEN} heroku container:push web -a ds3backend
+              HEROKU_API_KEY=${HEROKU_TOKEN} heroku container:release web -a ds3backend
 
 # Invoke jobs via workflows
 # See: https://circleci.com/docs/2.0/configuration-reference/#workflows
