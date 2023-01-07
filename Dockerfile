@@ -14,10 +14,5 @@ ENV DB_USER=elhibdeidgrfre
 ENV DB_PASSWORD=elhibdeidgrfre
 ENV DB_DBNAME=d942bqtpg0fsvf
 
-COPY --from=build-project /docker-spring-boot/dependencies/ ./
-COPY --from=build-project /docker-spring-boot/snapshot-dependencies/ ./
-
-RUN sleep 10
-
 COPY --from=build-project /docker-spring-boot/target/ds-2020-0.0.1-SNAPSHOT.jar ./docker-spring-boot.jar
 CMD ["java", "-jar", "docker-spring-boot.jar"]
