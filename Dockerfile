@@ -14,8 +14,8 @@ ENV DB_USER=elhibdeidgrfre
 ENV DB_PASSWORD=elhibdeidgrfre
 ENV DB_DBNAME=d942bqtpg0fsvf
 
-COPY --from=build-project /root/dependencies/ ./
-COPY --from=build-project /root/snapshot-dependencies/ ./
+COPY --from=build-project /docker-spring-boot/dependencies/ ./
+COPY --from=build-project /docker-spring-boot/snapshot-dependencies/ ./
 
 RUN sleep 10
 
